@@ -16,27 +16,6 @@ import PaymentScreen from "./screens/PaymentScreen";
 import OrdersScreen from "./screens/OrdersScreen";
 import { OrdersContextProvider } from "./context/OrderContext";
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      light: "#fffd61",
-      main: "#ffca28",
-      dark: "#c79a00",
-      contrastText: "#000",
-    },
-    secondary: {
-      light: "#d7ffd9",
-      main: "#a5d6a7",
-      dark: "#75a478",
-      contrastText: "#000",
-    },
-    text: {
-      primary: "#000",
-      secondary: "#fff",
-    },
-  },
-});
-
 const AppContextProvider = ({ children }) => (
   <OrdersContextProvider>
     <ProductsContextProvider>
@@ -50,7 +29,27 @@ const AppContextProvider = ({ children }) => (
 );
 
 const App = () => {
-  let theme = createTheme();
+  let theme = createTheme({
+    palette: {
+      primary: {
+        light: "#fffd61",
+        main: "#ffca28",
+        dark: "#c79a00",
+        contrastText: "#000",
+      },
+      secondary: {
+        light: "#d7ffd9",
+        main: "#a5d6a7",
+        dark: "#75a478",
+        contrastText: "#000",
+      },
+      text: {
+        primary: "#000",
+        secondary: "#fff",
+      },
+    },
+  });
+
   theme = responsiveFontSizes(theme);
   return (
     <BrowserRouter>
