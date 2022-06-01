@@ -3,20 +3,16 @@ import http from "../api/axios";
 
 const defaultValue = {
   items: [],
-  addItem: () => {},
-  removeItem: () => {},
-  getQuantity: () => {},
 };
 
 export const BasketContext = React.createContext(defaultValue);
 
-export const createOrder = async data => {
-  return await http.post("/orders", { data });
+export const createOrder = data => {
+  return http.post("/orders", { data });
 };
 
 export const BasketContextProvider = ({ children }) => {
   const [items, setItems] = useState([]);
-  const [price, setPrice] = useState(0);
   const addItem = newProduct => {
     if (items.map(({ product }) => product).includes(newProduct)) {
       setItems(prev =>
