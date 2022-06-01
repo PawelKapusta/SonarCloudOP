@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Box, Container, Divider, Typography } from "@mui/material";
-import { BasketContext, createOrder } from "../context/BasketContext";
+import { BasketContext } from "../context/BasketContext";
 import BasketItem from "../components/BasketItem";
 import Button from "@mui/material/Button";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";

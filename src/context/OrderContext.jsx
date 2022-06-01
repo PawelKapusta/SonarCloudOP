@@ -7,8 +7,8 @@ const defaultState = {
 
 export const OrdersContext = React.createContext(defaultState);
 
-export const fetchOrders = async () => {
-  return await http.get(`/orders`);
+export const fetchOrders = () => {
+  return http.get(`/orders`);
 };
 
 export const fetchOrderById = id => http.get(`/orders/${id}`);
