@@ -3,8 +3,6 @@ import http from "../api/axios";
 
 const defaultState = {
   orders: [],
-  setOrders: () => {},
-  getById: () => undefined,
 };
 
 export const OrdersContext = React.createContext(defaultState);
@@ -21,7 +19,6 @@ export const OrdersContextProvider = ({ children }) => {
   const providerValue = {
     orders,
     setOrders,
-    getById: id => orders.find(p => p.id === id),
   };
 
   return <OrdersContext.Provider value={providerValue}>{children}</OrdersContext.Provider>;
